@@ -1,3 +1,5 @@
+import { FormType } from './enum';
+
 export interface GetFormResponse {
   formId: number;
   title: string;
@@ -7,7 +9,7 @@ export interface GetFormResponse {
 export interface Item {
   itemId: number;
   title: string;
-  formType: string;
+  formType: FormType;
   options: Option[];
 }
 
