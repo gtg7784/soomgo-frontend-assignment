@@ -49,7 +49,7 @@ const RequestFormPage = () => {
           ?.options.find((option) => option.id === Number(element.value))?.text;
 
         if (answer === undefined) {
-          alert('잘못된 값을 입력했습니다, 다시 시도해주세요!');
+          alert('값을 입력해주세요!');
           return;
         }
 
