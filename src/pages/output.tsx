@@ -8,7 +8,9 @@ const OutputPage = () => {
   return (
     <div className="flex flex-col h-full w-full p-8">
       <h1 className="text-4xl font-extrabold">Output</h1>
-      <pre className="mt-6">{JSON.stringify(output, null, 4)}</pre>
+      <pre className="mt-6" data-testid="output">
+        {JSON.stringify(output, null, 4)}
+      </pre>
     </div>
   );
 };
