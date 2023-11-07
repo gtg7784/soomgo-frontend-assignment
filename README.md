@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Soomgo Frontend Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app) 를 통해 만들었습니다.\
+[yarn](https://yarnpkg.com/)을 Package Manager 로 사용하였습니다.
+
+## Before Start
+
+### `yarn install`
+
+프로젝트를 실행하기 전에 먼저 `yarn install` 을 통해 의존성을 설치해주세요.
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `yarn start`
 
-### `npm start`
+프로젝트를 development mode 로 실행합니다.\
+[http://localhost:3000](http://localhost:3000) 에서 확인할 수 있습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `yarn test`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+프로젝트의 test 를 실행합니다.
 
-### `npm test`
+test 작성을 위해 [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) 를 사용하였습니다.\
+테스트는 `src/__tests__` 에서 확인할 수 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `yarn build`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+프로젝트를 production mode 로 빌드합니다.\
+`build` 폴더에 빌드 결과물이 생성됩니다.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Create React App 의 내부 dependency 를 eject 합니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+프로젝트의 코드는 `src` 폴더에 위치합니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+프로젝트의 스타일링을 위해 [tailwindcss](https://tailwindcss.com/) 를 사용하였습니다.\
+[prettier](https://prettier.io/) 를 사용하여 코드를 포맷팅하였습니다.\
+프로젝트의 라우팅을 구성하기 위해 [react-router-dom](https://reactrouter.com/en/main) 을 사용하였습니다.
 
-## Learn More
+### `src/__tests__`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+프로젝트의 test 를 작성하는 폴더입니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `src/assets`
+
+프로젝트에서 사용하는 이미지 등의 asset 을 저장하는 폴더입니다.
+
+### `src/components`
+
+프로젝트의 컴포넌트를 작성하는 폴더입니다.
+
+### `src/hooks`
+
+프로젝트에서 사용하는 custom hook 을 작성하는 폴더입니다.
+
+Server data 의 데이터를 처리하고 동기화하기 위해 [@tanstack/react-query](https://tanstack.com/query/latest) 를 사용하였습니다.\
+`src/hooks/query` 에서 query 를 생성하는 함수를 작성하였습니다.
+
+`src/hooks/store` 에서 redux store 를 사용하기 위한 custom hook 을 작성하였습니다.
+
+### `src/lib`
+
+프로젝트에서 사용하는 library 를 작성하는 폴더입니다.
+
+`src/lib/test.tsx` 에서 jest 환경에서 memory router 를 사용하기 위한 renderWithRouter 함수를 작성하였습니다.
+
+### `src/pages`
+
+프로젝트의 페이지를 작성하는 폴더입니다.
+
+### `src/remotes`
+
+프로젝트에서 사용하는 remote api 를 작성하는 폴더입니다.
+
+http 통신을 위해 [axios](https://axios-http.com/kr/docs/intro) 를 사용하였습니다.\
+api 를 호출하는 함수는 `src/remotes/index.ts` 에 작성되어 있습니다.
+
+axios instance 를 생성하는 함수는 `src/remotes/http.ts` 에 작성되어 있습니다.
+
+### `src/store`
+
+프로젝트에서 사용하는 redux store 를 작성하는 폴더입니다.
+
+redux store 를 생성하는 함수는 `src/store/index.ts` 에 작성되어 있습니다.
+
+### `src/router.tsx`
+
+프로젝트의 router 를 작성하는 파일입니다.
+
+### `src/App.tsx`
+
+프로젝트의 root component 입니다.
