@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useAppDispatch } from '../hooks/store';
+import { clearOutput } from '../store/slice/output';
+
 const IndexPage = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(clearOutput());
+  }, [dispatch]);
+
   return (
     <div className="flex flex-col h-full w-full p-8">
       <h1 className="text-4xl font-extrabold">요청서</h1>
