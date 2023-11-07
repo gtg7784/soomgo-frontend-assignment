@@ -56,6 +56,7 @@ const Form = ({ items, className, ...props }: Props) => {
         if (item.formType === FormType.Select) {
           return (
             <Select
+              title={item.title}
               options={item.options}
               itemId={item.itemId}
               className={`mt-6 ${index !== step && 'hidden'}`}

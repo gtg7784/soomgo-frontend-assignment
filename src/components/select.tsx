@@ -8,7 +8,7 @@ interface Props extends React.ComponentProps<'select'> {
   itemId: number;
 }
 
-const Select = ({ options, itemId, className, ...props }: Props) => {
+const Select = ({ options, itemId, className, title, ...props }: Props) => {
   return (
     <select
       id={`item-${itemId}`}
@@ -18,6 +18,7 @@ const Select = ({ options, itemId, className, ...props }: Props) => {
         className,
       )}
       name={`${itemId}`}
+      aria-label={title}
       {...props}
     >
       {options.map((option) => (
